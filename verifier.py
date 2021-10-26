@@ -314,11 +314,15 @@ def to_base_4(n):
         s = str(n % 4) + s
         n //= 4
     return s
-n = int(input("please enter the number of cycle nodes of m-barrel fullerene graph "))
-k = int(input("please enter the number of layers of m-barrel fullerene graph "))
 
-matching = "13130000130130131313"
-if consistency() != -1:
-    print("I have found a matching")
-    print(matching)
+testCaseFile = open('test-case.txt', 'r')
+tests = testCaseFile.readlines()
+
+for test in tests:
+    n, k, matching = test.split(' ')
+    n = int(n)
+    k = int(k)
+    if consistency() != -1:
+        print("I have found a matching")
+        print(matching)
 
