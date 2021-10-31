@@ -175,6 +175,12 @@ def consistency_last_layer():
                     print("inter")
                     print("inconsistenst")
                     return -1
+            else:
+                if matching[(((k + 2 - 1) * (2 * n)) + ((2 * iN) + 1))] != '2':
+                    print("last layer")
+                    print("inter")
+                    print("inconsistenst")
+                    return -1
     return 1
         
 def consistency():
@@ -285,6 +291,11 @@ def consistency_rest_layers():
                                 print("inter")
                                 print("inconsistent")
                                 return -1
+                        else:
+                            if matching[((2 * n) * (iK + 1)) + int((iN - 1)/2)] != '2':
+                                print("inter")
+                                print("inconsistent")
+                                return -1
 
                     else:
                         if iK != 1:
@@ -292,6 +303,11 @@ def consistency_rest_layers():
                                 print("inter")
                                 print("inconsistent")
                                 return -1
+                        else:
+                            if matching[int(iN/2)] != '2':
+                                print("inter")
+                                print("inconsistent")
+                                return -1   
 
                 else:
                     if iN % 2 == 1:
@@ -302,6 +318,11 @@ def consistency_rest_layers():
                     else:
                         if iK != k + 1:
                             if matching[(((2 * n) * (iK + 1)) + iN)] != '2':
+                                print("inter")
+                                print("inconsistent")
+                                return -1
+                        else:
+                            if matching[((2*n) + (iK + 1 )) + int(iN/2)] != '2':
                                 print("inter")
                                 print("inconsistent")
                                 return -1
